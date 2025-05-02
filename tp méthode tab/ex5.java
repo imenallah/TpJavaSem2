@@ -49,50 +49,49 @@ public class ex5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter number of rows for matrix 1: ");
+        System.out.print("Enter nb lignes mat 1: ");
         int rows1 = scanner.nextInt();
-        System.out.print("Enter number of columns for matrix 1: ");
+        System.out.print("Enter nb col mat 1: ");
         int cols1 = scanner.nextInt();
 
         double[][] tab1 = new double[rows1][cols1];
-        System.out.println("Enter elements for matrix 1:");
+        System.out.println("Enter elements mat 1:");
         for (int i = 0; i < rows1; i++) {
             for (int j = 0; j < cols1; j++) {
                 tab1[i][j] = scanner.nextDouble();
             }
         }
 
-        System.out.print("Enter number of rows for matrix 2: ");
+        System.out.print("Enter nb lignes mat  2: ");
         int rows2 = scanner.nextInt();
-        System.out.print("Enter number of columns for matrix 2: ");
+        System.out.print("Enter nb lignes mat 2: ");
         int cols2 = scanner.nextInt();
 
         double[][] tab2 = new double[rows2][cols2];
-        System.out.println("Enter elements for matrix 2:");
+        System.out.println("Enter elements  mat 2:");
         for (int i = 0; i < rows2; i++) {
             for (int j = 0; j < cols2; j++) {
                 tab2[i][j] = scanner.nextDouble();
             }
         }
 
-        System.out.println("\nMatrix 1:");
+        System.out.println("\nmat1:");
         affich(tab1, rows1);
-        System.out.println("Matrix is regular: " + regulier(tab1));
+        System.out.println("Matrice est reguliée: " + regulier(tab1));
 
-        System.out.println("\nRow sums for matrix 1:");
+        System.out.println("\ncol som for mat1:");
         double[] sommes = somme(tab1, rows1);
         for (double d : sommes) {
             System.out.println(d);
         }
 
-        System.out.println("\nSum of two matrices:");
+        System.out.println("\nsom matrices:");
         double[][] sommeTotale = somme(tab1, tab2);
         if (sommeTotale != null) {
             affich(sommeTotale, rows1);
         } else {
-            System.out.println("Matrices are not compatible for addition.");
+            System.out.println("Matrices sont compatible à addition.");
         }
 
-        scanner.close();
     }
 }
